@@ -9,11 +9,13 @@ const promptUser = () => {
             type: 'input',
             name: 'email',
             message: 'What is your email address? (Required)',
-            validate: nameInput => {
-                if(nameInput){
+            validate: function(email)
+            {
+                // Regex mail check (return true if valid mail)
+                if (/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)){
                     return true
-                }else {
-                    console.log('Please enter your email address!')
+                }else{
+                    console.log('Please enter a valid email!')
                     return false
                 }
             }

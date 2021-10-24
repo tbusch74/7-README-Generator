@@ -44,7 +44,7 @@ const generateContribution = contributionText => {
     return ``;
   }
   return `
-  ## Contribution
+  ## Contributing
 
   ${contributionText}
   `
