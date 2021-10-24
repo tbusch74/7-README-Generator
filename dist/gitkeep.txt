@@ -1,1 +1,1 @@
-This is here so the dist folder gets committed to the repo
+This is here so we can commit the 'dist' folder
