@@ -67,26 +67,26 @@ const generateTest = testText => {
   `
 };
 
-function renderLicenseBadge(license) {
+function licenseBadge(license) {
   switch (license){
     case 'GNU AGPLv3 License':
-      return ''
+      return '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)'
     case 'GNU GPLv3 License':
-      return ''
+      return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
     case 'GNU LGPLv3 License':
-      return ''
+      return '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)'
     case 'Mozilla Public License 2.0':
-      return ''
+      return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
     case 'Apache License 2.0':
-      return ''
+      return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
     case 'MIT License':
-      return ''
+      return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
     case 'Boost Software License 1.0':
-      return ''
+      return '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)'
     case 'The Unlicense License':
-      return ''
+      return '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
   }
-}
+};
 
 function licenseLink(license) {
   switch (license){
@@ -107,10 +107,12 @@ function licenseLink(license) {
     case 'The Unlicense License':
       return 'https://choosealicense.com/licenses/unlicense/'
   }
-}
+};
 
 function generateMarkdown(data) {
   return `# ${data.title}
+
+  ${licenseBadge(data.license)}
 
   ## Description
 
@@ -126,6 +128,11 @@ function generateMarkdown(data) {
   This project is governed by the terms stated in the ${data.license}. A copy of the license can be found at ${licenseLink(data.license)}
   ${generateContribution(data.contributionGuidelines)}${generateTest(data.testInstructions)}
   ## Questions
+
+  View this project and my other projects at <https://github.com/${data.githubName}>
+
+  Please reach out to <${data.email}> with any other questions.
+
 `;
 }
 

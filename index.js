@@ -5,6 +5,32 @@ const fs = require('fs');
 
 const promptUser = () => {
     return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address? (Required)',
+            validate: nameInput => {
+                if(nameInput){
+                    return true
+                }else {
+                    console.log('Please enter your email address!')
+                    return false
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'githubName',
+            message: 'What is your Github username? (Required)',
+            validate: nameInput => {
+                if(nameInput){
+                    return true
+                }else {
+                    console.log('Please enter your Github username!')
+                    return false
+                }
+            }
+        },
          {
              type: 'input',
              name: 'title',
