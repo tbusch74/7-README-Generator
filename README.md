@@ -27,7 +27,7 @@
 
   This project is governed by the terms stated in the MIT License. A copy of the license can be found at https://choosealicense.com/licenses/mit/
   
-  ## Contribution
+  ## Contributing
 
   To contribute and get access to the repository, please reach out to the email listed at the bottom of this README.
   
